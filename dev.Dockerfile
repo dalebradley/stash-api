@@ -1,4 +1,4 @@
-FROM golang:1.16-alpine as base
+FROM golang:1.18-alpine as base
 
 FROM base as dev
 
@@ -14,8 +14,7 @@ COPY go.sum .
 RUN go mod download
 
 # Install the air binary so we get live code-reloading when we save files
-RUN go get github.com/cosmtrek/air
-
+RUN go install github.com/cosmtrek/air@latest
 
 COPY . .
 
@@ -27,4 +26,4 @@ RUN go build -o ./out/stash-api .
 EXPOSE 8080
 
 # Run the binary program produced by `go install`
-CMD ["air","./out/stash-api"]
+CMD ["air", "-c", ".air.toml","./out/stash-api"]

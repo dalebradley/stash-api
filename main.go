@@ -16,7 +16,7 @@ func main() {
 	mainRouter.StrictSlash(true)
 	routes.Register(mainRouter)
 
-	log.Println("Starting server on port " + cfg.StashPort[1:])
+	log.Println("Starting stash api server on port " + cfg.StashPort[1:])
 	err := http.ListenAndServe(cfg.StashPort, mainRouter)
 	if err != nil {
 		log.Fatal("Error starting server", err)

@@ -23,7 +23,6 @@ type CreatedBy struct {
 type FileResourceRest struct {
 	ID        string    `json:"id"`
 	Type      string    `json:"type"`
-	Amount    float64   `json:"amount"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at,omitempty"`
 	CreatedBy CreatedBy `json:"created_by"`

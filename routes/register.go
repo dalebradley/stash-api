@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"handlers"
+	"github.com/dalebradley/stash-api/handlers"
 
 	"github.com/gorilla/mux"
 )

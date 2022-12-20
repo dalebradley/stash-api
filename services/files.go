@@ -75,9 +75,6 @@ func validateCreateFileRequestBody(createFileRequest models.FileResourceRest) er
 	if createFileRequest.ID == "" {
 		return errors.New("empty ID")
 	}
-	if createFileRequest.Amount == 0 {
-		return errors.New("no amount provided")
-	}
 	if createFileRequest.Type == "" {
 		return errors.New("no type provided")
 	}

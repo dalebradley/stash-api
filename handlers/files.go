@@ -4,12 +4,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"stash-api/services"
 	"time"
 
-	"models"
+	"github.com/dalebradley/stash-api/services"
 
-	"services"
+	"github.com/dalebradley/stash-api/models"
 
 	"github.com/google/uuid"
 	"github.com/gorilla/mux"
@@ -40,7 +39,6 @@ func HandleCreateFile(w http.ResponseWriter, r *http.Request) {
 	fileResourseRest := models.FileResourceRest{
 		ID:        uuid.New().String(),
 		Type:      incomingCreateFileRequest.Type,
-		Amount:    incomingCreateFileRequest.Amount,
 		CreatedAt: time.Now(),
 		CreatedBy: createdBy,
 	}
