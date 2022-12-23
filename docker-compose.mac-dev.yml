@@ -13,4 +13,4 @@ services:
       - stash-network
     restart: always
     volumes:
-      - /data/db:/data/db
+      - ~/data/db:/data/db
